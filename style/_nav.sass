@@ -1,0 +1,158 @@
+.navBar
+    position: absolute
+    @include pos(0, 0, auto, 0)
+    z-index: 100
+    padding: 15px 25px
+    color: $white
+    @include flex(space-between,center)
+    font-family: $LeagueSpartan
+    opacity: 0
+    transform: translateY(-100%)
+    transition: transform 600ms cubic-bezier(.694,.048,.335,1) 1300ms
+
+.navBarLoaded
+    opacity: 1
+    transform: translateY(0)
+
+.logo
+    font-weight: normal
+    font-size: 1.8rem
+    cursor: pointer
+
+@media screen and (max-width:1000px)
+    .logo
+        font-size: 1.4rem
+
+@media screen and (max-width:450px)
+    .logo
+        font-size: 1.2rem
+
+@media screen and (max-width:350px)
+    .logo
+        font-size: 1rem
+
+.nav-links
+    list-style: none
+    @include flex(space-around,stretch)
+
+    li
+        list-style: none
+        margin-left: 25px
+        position: relative
+
+        a
+            color: $white
+            text-decoration: none
+            letter-spacing: 3px
+            font-size: 1rem
+            cursor: pointer
+
+        @media screen and (min-width:1000px)
+            a
+                &::after,&::before
+                    content: ''
+                    position: absolute
+                    @include pos(auto, 0, -2px, auto)
+                    width: 0
+                    height: 2px
+
+                &::after
+                    background-color: $hotPink
+                    transition: all 250ms cubic-bezier(.694,.048,.335,1)
+
+                &::before
+                    background-color: $lightDarkBlue
+                    transition: all 250ms cubic-bezier(.694,.048,.335,1) 150ms
+
+                &:hover::after,&:hover::before
+                    width: 100%
+                    left: 0
+
+.hamBurger
+    @include flex(center,flex-end)
+    flex-direction: column
+    display: none
+    cursor: pointer
+
+    div
+        height: 3px
+        border-radius: 1px
+        background-color: $white
+        margin: 3.5px
+        transition: all 300ms ease-in
+
+    .line1
+        width: 40px
+    .line2
+        width: 30px
+    .line3
+        width: 20px
+
+@media screen and (max-width:1000px)
+    .navBar
+        padding: 15px 15px
+
+@media screen and (max-width:875px)
+    body
+        overflow-x: hidden
+
+    .nav-links
+        position: absolute
+        @include pos(0, 0, auto, auto)
+        height: 100vh
+        background-color: $canvasBg
+        @include flex(center,flex-start)
+        flex-direction: column
+        width: 100%
+        transform: translateX(-100%)
+        transition: all 400ms cubic-bezier(.694, .048, .335, 1)
+
+        li
+            margin: 25px 25%
+            opacity: 0
+
+            a
+                font-size: 1.8rem
+                
+
+    .hamBurger
+        display: flex
+
+.nav-active
+    transform: translateX(0%)
+
+    &::after
+        content: ''
+        background: linear-gradient( to right, $darkBlue , $lightPurple) no-repeat fixed center
+        position: absolute
+        @include pos(0, 0, auto, auto)
+        height: 100%
+        animation: navstripefade 600ms cubic-bezier(.694, .048, .335, 1) forwards
+
+.toggleCancel
+    .line1
+        width: 25px
+        transform: rotate(-405deg) translate(-8px, 8px)
+
+    .line2
+        opacity: 0
+
+    .line3
+        width: 25px
+        transform: rotate(405deg) translate(-6px, -6px)
+
+@keyframes navlinkfade
+    from
+        opacity: 0
+        transform: translateY(100%)
+
+    to
+        opacity: 1
+        transform: translateY(0)
+
+@keyframes navstripefade
+    from
+        width: 100%
+
+    to
+        width: 0

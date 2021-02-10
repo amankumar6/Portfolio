@@ -1,0 +1,63 @@
+#contact
+    background-image: $bg
+
+    .container
+        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%)
+        background: $canvasBg
+        height: 25rem
+        padding: 3rem 0
+        @include flex(space-around,center)
+        flex-direction: column
+        color: $white
+
+        .logo
+            @include flex(space-around,center)
+            flex-direction: column
+
+            h2
+                color: $white
+                cursor: pointer
+
+        .links ul
+            list-style: none
+            @include flex(center,center)
+            flex-wrap: wrap
+            font-family: $LeagueSpartan
+            
+            li
+                font-size: 1.2rem
+                margin: 1rem 2rem 0 0
+                position: relative
+
+                a
+                    color: $white
+                    text-decoration: none
+                    letter-spacing: 2px
+
+        @media screen and (min-width:1000px)
+            .links ul li a
+                &::after,&::before
+                    content: ''
+                    position: absolute
+                    @include pos(auto, 0, -2px, auto)
+                    width: 0
+                    height: 2px
+
+                &::after
+                    background-color: $hotPink
+                    transition: all 250ms cubic-bezier(.694,.048,.335,1)
+
+                &::before
+                    background-color: $lightDarkBlue
+                    transition: all 250ms cubic-bezier(.694,.048,.335,1) 150ms
+
+                &:hover::after,&:hover::before
+                    width: 100%
+                    left: 0
+
+        .copywrite
+            font-family: $Montserrat
+
+@media screen and ( max-width: 640px )
+    #contact.container
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)

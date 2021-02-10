@@ -1,0 +1,103 @@
+#particles-js
+    clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 95%)
+    position: relative
+    width: 100%
+    height: 110vh
+    background-color: $canvasBg
+
+    canvas
+        display: block
+        vertical-align: bottom
+        position: relative
+        opacity: 0
+        transition: opacity 1300ms cubic-bezier(.694,.048,.335,1) 600ms
+
+    .canvasLoaded
+        opacity: 1
+
+    .intro
+        font-family: League Spartan, Helvetica, Arial, sans-serif
+        color: $white
+        position: absolute
+        @include pos(50%, auto, auto, 0)
+        transform: translate(-30%,-50%)
+        z-index: 2
+        cursor: default
+        opacity: 0
+        transition: all 600ms ease 1300ms
+
+        p.para
+            font-size: 3.9rem
+
+            span.name
+                color: $hotPink
+
+        p.reveal
+            font-family: $Poppins
+            font-style: italic
+            font-weight: 300
+            word-spacing: 2px
+            font-size: 1.2rem
+
+        .github a
+            color: $white
+            font-family: $Raleway
+            width: max-content
+            padding: 13px 22px
+            margin-right: 0
+            border-radius: 6px
+            text-align: center
+            text-decoration: none
+            display: block
+            margin-top: 20px
+            font-size: 1.2rem
+            cursor: pointer
+            letter-spacing: 2px
+            transition: all 400ms ease
+            background-image: linear-gradient(to right, $darkBlue 0%, $darkBlue 51%, $lightPurple 100%)
+            background-size: 200% 100%
+            background-position: 100%
+
+        @media screen and ( min-width: 1000px )
+            p.para span.name
+                position: relative
+                transition: all 400ms ease 100ms
+
+                &::after
+                    content: ''
+                    position: absolute
+                    @include pos(0, 0, 0, auto)
+                    width: 0
+                    height: 90%
+                    background: $hotPink
+                    z-index: -1
+                    transition: all 400ms cubic-bezier(.694,.048,.335,1) 100ms
+
+                &:hover::after
+                    width: 100%
+                    left: 0
+
+                &:hover
+                    color: white
+
+            .github a:hover
+                background-position: 0 100%
+
+        @media screen and ( max-width: 700px  )
+            p.para
+                font-size: 2.9rem
+
+            p.reveal
+                font-size: 1rem
+
+            .github a
+                font-size: 1rem
+
+    .introLoaded
+        opacity: 1
+        @include pos(50%, auto, auto, 30%)
+
+
+@media screen and ( max-width: 640px )
+    #particles-js
+        clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 100%)

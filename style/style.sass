@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:ital,wght@0,400;1,300&family=Raleway:wght@600&display=swap')
+
+@font-face
+    font-family: League Spartan
+    src: url(../assets/fonts/LeagueSpartan-Bold.otf)
+
+// Colors
+$white: #f3f3f3
+$black: #252525
+$headerColor: #444649
+$hotPink: #e31b6d
+$lightBlue: #30afbf
+$blue: #0d6efd
+$lightDarkBlue: #235aa6
+$darkBlue: #1A2980
+$coral: #f25757
+$lightPurple: #514A9D
+$purple: #8834f7
+$overlay: #1c1d25
+$lightGray: #6c757d
+$gray: #666666
+
+// Background Color
+$defaultBg: linear-gradient( 112.7deg, rgba(162,247,241,1) 0.3%, rgba(199,146,255,1) 88.7% )
+$canvasBg: #232741
+$bg: linear-gradient( to right, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% )
+
+// Fonts
+$LeagueSpartan: League Spartan, Helvetica, Arial, sans-serif
+$Poppins: 'Poppins', sans-serif
+$Raleway: 'Raleway', sans-serif
+$Montserrat: 'Montserrat', sans-serif
+
+@mixin flex($justify,$align)
+    display: flex
+    justify-content: $justify
+    align-items: $align
+
+@mixin pos($t, $r, $b, $l)
+    top: $t
+    right: $r
+    bottom: $b
+    left: $l
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-image: $defaultBg
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+
+#loader
+    color: $white
+    font-size: 4rem
+    font-family: $LeagueSpartan
+    position: fixed
+    height: 100vh
+    width: 100%
+    background: linear-gradient( to right, $darkBlue , $lightPurple) no-repeat fixed center
+    transition: transform 1000ms cubic-bezier(.694,.048,.335,1)
+    z-index: 100
+
+    p
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+
+.loaded1
+    transform: translateX(100%)
+
+.loaded2
+    transform: translateX(-100%)
+
+.loaded3
+    transform: translateY(100%)
+
+.loaded4
+    transform: translateY(-100%)
+
+.removeOverflow
+    overflow: hidden !important
+
+#main
+    #about,#experience,#projects,#skills
+        .container
+            width: 85%
+            margin: 0 auto
+            font-family: $Poppins
+            color: $black
+
+            .header
+                text-transform: uppercase
+                font-family: $Raleway
+                font-weight: 700
+                color: $headerColor
+                width: max-content
+                margin: 0 auto 3rem auto
+                position: relative
+
+                &::after
+                    content: ''
+                    position: absolute
+                    @include pos(auto, 20%, -8px, 20%)
+                    width: 60%
+                    height: 3px
+                    background: $headerColor
+
+    #about .container .content
+        p
+            margin-top: 1rem
+            font-size: 1.1rem
+
+            &:first-child
+                margin-top: 0
+
+            a
+                color: $blue
+                text-decoration: none
+
+    div[data-color="0"]
+        .container
+            padding: 3rem 0 8rem 0
+
+    div[data-color="1"]
+        background-image: $bg
+        .container
+            padding: 6rem 0 4rem 0
+
+    @media screen and ( max-width: 640px )
+        div[data-color="0"] .container
+            padding: 3rem 0 4rem 0
+
+        div[data-color="1"] .container
+            padding: 3rem 0 4rem 0
+
+@import './_canvas'
+@import './_nav'
+@import './_skills_experience'
+@import './_projects'
+@import './contact'
