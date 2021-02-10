@@ -49,9 +49,6 @@ html(lang="en")
         //- Baffle
         script(src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.2.1/baffle.min.js")
 
-        //- AOS
-        script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
-
         title Aman Kumar | Front-End Developer
 
     body
@@ -96,8 +93,8 @@ html(lang="en")
         #main
             #about(data-color="0")
                 .container
-                    h1.header(data-aos="fade-up" data-aos-easing="linear" data-aos-duration="250") About
-                    .content(data-aos="fade-up" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+                    h1.header About
+                    .content
                         p My self Aman, a 20-year-old passionate Front-End Developer from India. I am an undergraduate pre-final year student in the Department of Electronics and Communication at the Birla Institute of Technology, Mesra.
 
                         p As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.
@@ -112,9 +109,9 @@ html(lang="en")
 
             #experience(data-color="1")
                 .container
-                    h1.header(data-aos="fade-up" data-aos-easing="linear" data-aos-duration="250") Experience
+                    h1.header Experience
                     .content
-                        .card(data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+                        .card
                             h1.card-header
                                 p.title
                                     img(src="https://www.koireader.com/static/img/icons/favicon-32x32.png", alt="KoiReader")
@@ -135,7 +132,7 @@ html(lang="en")
 
                                 p.time-span Aug 2020 - Sept 2020 
 
-                        .card(data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+                        .card
                             h1.card-header
                                 p.title
                                     img(src="https://itwali.com/wp-content/uploads/2020/07/cropped-logo1-72x95.jpg" alt="Itwali" width="32px")
@@ -158,9 +155,9 @@ html(lang="en")
 
             #projects(data-color="0")
                 .container
-                    h1.header(data-aos="fade-up" data-aos-easing="linear" data-aos-duration="250") Projects
+                    h1.header Projects
                     .content
-                        .project(data-aos="fade-right" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+                        .project
                             .list-number 
                                 h1 01
                             img(src="./assets/images/top10list.jpg", alt="Top10List")
@@ -172,7 +169,7 @@ html(lang="en")
                                     button.visit(data-ref='https://top10list-react.netlify.app/') Visit Website 
                                         i.far.fa-long-arrow-right
 
-                        .project(data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+                        .project
                             .list-number 
                                 h1 02
                             img(src="./assets/images/epicPlayer.jpg", alt="EpicPlayer")
@@ -184,7 +181,7 @@ html(lang="en")
                                     button.visit(data-ref='http://epicplayer.ml/') Visit Website 
                                         i.far.fa-long-arrow-right
 
-                        .project(data-aos="fade-right" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+                        .project
                             .list-number 
                                 h1 03
                             img(src="./assets/images/basic-calculator.jpg", alt="Basic-Calculator")
@@ -196,7 +193,7 @@ html(lang="en")
                                     button.visit(data-ref='https://basiccal.netlify.app/') Visit Website 
                                         i.far.fa-long-arrow-right
 
-                        .project(data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+                        .project
                             .list-number 
                                 h1 04
                             img(src="./assets/images/wordcountingapp.jpg", alt="WordCountingApp")
@@ -208,7 +205,7 @@ html(lang="en")
                                     button.visit(data-ref='https://wordcountingapp.netlify.app/') Visit Website 
                                         i.far.fa-long-arrow-right
 
-                        .project(data-aos="fade-right" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+                        .project
                             .list-number 
                                 h1 05
                             img(src="./assets/images/hexagonal.jpg", alt="Hexagonal")
@@ -222,9 +219,9 @@ html(lang="en")
 
             #skills(data-color="1")
                 .container
-                    h1.header(data-aos="fade-up" data-aos-easing="linear" data-aos-duration="250") Skills
+                    h1.header Skills
                     .content
-                        .card(data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="50")
+                        .card
                             h1.card-header HTML
                             .card-content
                                 div
@@ -239,7 +236,7 @@ html(lang="en")
                                     img.skill-img(alt="" src="./assets/icons/react.png")
                                     p.skill-name JSX
 
-                        .card(data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="50")
+                        .card
                             h1.card-header CSS
                             .card-content
                                 div
@@ -258,7 +255,7 @@ html(lang="en")
                                     img.skill-img(alt="" src="./assets/icons/materialize.png")
                                     p.skill-name Materialize
 
-                        .card(data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="50")
+                        .card
                             h1.card-header Javascript
                             .card-content
                                 div
@@ -281,7 +278,7 @@ html(lang="en")
                                     img.skill-img(alt="Redux" src="./assets/icons/redux.png")
                                     p.skill-name Redux
 
-                        .card(data-aos="fade-left" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="50")
+                        .card
                             h1.card-header Other
                             .card-content
                                 div
@@ -297,7 +294,7 @@ html(lang="en")
                                     p.skill-name Git
 
         #contact 
-            .container(data-aos="fade-up" data-aos-easing="linear" data-aos-duration="300" data-aos-offset="100")
+            .container
                 .logo
                     h2
                         pre <𝒜𝓂𝒶𝓃 𝒦𝓊𝓂𝒶𝓇/>

@@ -1,5 +1,4 @@
-let randomNumber = Math.floor(Math.random() * 4) + 1,
-    append = 0;
+let randomNumber = Math.floor(Math.random() * 4) + 1;
 
 $(document).ready(function () {
     switch (randomNumber) {
@@ -68,25 +67,6 @@ $(document).ready(function () {
     $('.navBar .logo').click(()=> location.reload(true))
 });
 
-// Removing and adding Animation on Scroll 
-if (screen.width > 900) onScroll()
-$(window).resize(() => {
-    if (screen.width > 900) {
-        onScroll();
-        append++;
-    } else {
-        while (append > 0) {
-            $('#aos').remove();
-            append--;
-        }
-    }
-});
-
-function onScroll() {
-    $('head').prepend('<link id="aos" rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" type="text/css" />');
-    AOS.init();
-}
-
 $(window).on('load', () => setTimeout(() => window.scrollTo(0, 0), 0));
 
 function nav() {
@@ -97,8 +77,7 @@ function nav() {
         $('.nav-links li').each(function (index) {
             this.style.animation ?
                 (this.style.animation = '') :
-                (this.style.animation = `navlinkfade 500ms ease forwards ${index / 10 + 0.2
-                    }s`);
+                (this.style.animation = `navlinkfade 500ms ease forwards ${index / 10 + 0.2}s`);
         });
 
         // animating the hamBurger button
