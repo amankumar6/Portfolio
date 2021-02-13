@@ -52,6 +52,19 @@ html(lang="en")
         title Aman Kumar | Front-End Developer
 
     body
+        //- All Variables
+        - let year = new Date();
+
+        - let experience = [{'title':'KoiReader', 'profile':'Front-End Developer','link':'https://www.koireader.com/', 'img':'https://www.koireader.com/static/img/icons/favicon-32x32.png', 'disc':'Artificial Intelligence based document automation and video feed data capture suite of cognitive APIs designed.', 'details': ['During the internship period, I was assigned a role as a front-end developer of KoiReader.','Tools Used: PUG, CSS, Materialize, JavaScript, jQuery, MJML, Web Components, LitElement and Vaadin','Accomplished: Learned new thing in JavaScript and CSS and enhance my knowledge in Web Development.'],'time':'Sep 2020 - Nov 2020 '}, {'title':'ItWali', 'profile':'Front-End Developer','link':'https://www.koireader.com/', 'img':'https://itwali.com/wp-content/uploads/2020/07/cropped-logo1-72x95.jpg', 'disc':'Committed To Helping Our Clients Succeed All You Need A Reliable source That Helps in dealing With Your Income Tax Planning.','details':['During the Internship, I was assigned as a front end developer of Itwali.com. In that project, I was assigned to developed pages of Itwali.com.','Tools Used: HTML, CSS, BootStrap, JavaScript and jQuery','Accomplished: Learned many new library, increased my speed in UI development and enhance my knowledge in Web Development.'],'time':'Aug 2020 - Sept 2020'}]
+
+        - let projects = [{"title": "Top10List", "link": "https://top10list-react.netlify.app/", "img": "top10list.jpg", "desc": "Top10List is a single page application that is made using ReactJs.",}, {"title": "Epic Player", "link": "http://epicplayer.ml/", "img": "epicPlayer.jpg", "desc": "Epic Player is a music player app with an audio visualizer", }, {"title": "Basic-Calculator", "link": "https://basiccal.netlify.app/", "img": "basic-calculator.jpg", "desc": "Basic Calculator that can do Addition, Subtraction, Multiplication, Division, and Percentage.",}, {"title": "Word Counting App", "link": "https://wordcountingapp.netlify.app/", "img": "wordcountingapp.jpg", "desc": "A simple website where you can count the words and characters.", }, {"title": "Hexagonal", "link": "https://hexgonal.netlify.app/", "img": "hexagonal.jpg", "desc": "Responsive website with a honeycomb pattern with cool CSS which will make you feel Trippy!! ", },]
+
+        - let html = [{'title':'HTML5','img':'html5.png'},{'title':'PUG','img':'pug.png'},{'title':'JSX','img':'react.png'}]
+        - let css = [{'title':'CSS3','img':'css3.png'},{'title':'SASS','img':'sass.png'},{'title':'Bootstrap','img':'bootstrap.png'},{'title':'Materialize','img':'materialize.png'}]
+        - let javascript = [{'title':'JavaScript','img':'javascript.png'},{'title':'TypeScript','img':'typescript.png'},{'title':'jQuery','img':'jQuery.png'},{'title':'React','img':'react.png'},{'title':'Redux','img':'redux.png'}]
+        - let other = [{'title':'C++','img':'c.png'},{'title':'Wordpress','img':'wordpress.png'},{'title':'Git','img':'git.png'}]
+        - let skillSet = [{'name': 'HTML','skills':html},{'name': 'CSS','skills':css},{'name': 'Javascript','skills':javascript},{'name': 'Other','skills':other}]
+
         noscript You need to enable JavaScript to run this app.
 
         #loader 
@@ -100,7 +113,7 @@ html(lang="en")
                         p As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.
 
                         p Currently I am learning Back-End. My short term goal is to get a job in a reputed company as a Full-Stack Web Developer. And, my Long term goal is to become a more responsible and knowledgeable personality and in a respectable position in my company.
-                        
+
                         p When not working or futzing around with code, I study how to escape from College. I'm available for work, 
                             a(href="mailto:amankumar786dpsdh@gmail.com" target="_blank") get in touch.
 
@@ -111,187 +124,49 @@ html(lang="en")
                 .container
                     h1.header Experience
                     .content
-                        .card
-                            h1.card-header
-                                p.title
-                                    img(src="https://www.koireader.com/static/img/icons/favicon-32x32.png", alt="KoiReader")
-                                    a(href="https://www.koireader.com/") KoiReader
+                        each elm in experience
+                            .card
+                                h1.card-header
+                                    p.title
+                                        img(src=elm.img alt=elm.title.toLowerCase())
+                                        a(href=elm.link)=elm.title
+                                    p=elm.profile
 
-                                p Front-End Developer
-
-                            .card-content
-
-                                p.disc Artificial Intelligence based document automation and video feed data capture suite of cognitive APIs designed.
-
-                                ul
-                                    li During the internship period, I was assigned a role as a front-end developer of KoiReader.
-
-                                    li Tools Used: PUG, CSS, Materialize, JavaScript, jQuery, MJML, Web Components, LitElement and Vaadin
-
-                                    li Accomplished: Learned new thing in JavaScript and CSS and enhance my knowledge in Web Development.
-
-                                p.time-span Aug 2020 - Sept 2020 
-
-                        .card
-                            h1.card-header
-                                p.title
-                                    img(src="https://itwali.com/wp-content/uploads/2020/07/cropped-logo1-72x95.jpg" alt="Itwali" width="32px")
-                                    a(href="https://itwali.com/") ItWali
-
-                                p Front-End Developer
-
-                            .card-content
-
-                                p.disc Committed To Helping Our Clients Succeed All You Need A Reliable source That Helps in dealing With Your Income Tax Planning.
-
-                                ul
-                                    li During the Internship, I was assigned as a front end developer of Itwali.com. In that project, I was assigned to developed pages of Itwali.com.
-
-                                    li Tools Used: HTML, CSS, BootStrap, JavaScript and jQuery
-
-                                    li Accomplished: Learned many new library, increased my speed in UI development and enhance my knowledge in Web Development.
-
-                                p.time-span Sep 2020 - Nov 2020 
+                                .card-content
+                                    p.disc=elm.disc
+                                    ul
+                                        each item in elm.details
+                                            li=item
+                                    p.time-span=elm.time
 
             #projects(data-color="0")
                 .container
                     h1.header Projects
                     .content
-                        .project
-                            .list-number 
-                                h1 01
-                            img(src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020555/portfolio/images/top10list.jpg", alt="Top10List")
-                            .project-text
-                                p.project-title Top10List
-                                p.project-disc Top10List is a single page application that is made using ReactJs.
-
-                                .btn
-                                    button.visit(data-ref='https://top10list-react.netlify.app/') Visit Website 
-                                        i.far.fa-long-arrow-right
-
-                        .project
-                            .list-number 
-                                h1 02
-                            img(src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020555/portfolio/images/epicPlayer.jpg", alt="EpicPlayer")
-                            .project-text
-                                p.project-title Epic Player
-                                p.project-disc Epic Player is a music player app with an audio visualizer.
-
-                                .btn
-                                    button.visit(data-ref='http://epicplayer.ml/') Visit Website 
-                                        i.far.fa-long-arrow-right
-
-                        .project
-                            .list-number 
-                                h1 03
-                            img(src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020555/portfolio/images/basic-calculator.jpg", alt="Basic-Calculator")
-                            .project-text
-                                p.project-title Basic Calculator
-                                p.project-disc Basic Calculator that can do Addition, Subtraction, Multiplication, Division, and Percentage.
-
-                                .btn
-                                    button.visit(data-ref='https://basiccal.netlify.app/') Visit Website 
-                                        i.far.fa-long-arrow-right
-
-                        .project
-                            .list-number 
-                                h1 04
-                            img(src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020555/portfolio/images/wordcountingapp.jpg", alt="WordCountingApp")
-                            .project-text
-                                p.project-title Word Counting App
-                                p.project-disc A simple website where you can count the words and characters.
-
-                                .btn
-                                    button.visit(data-ref='https://wordcountingapp.netlify.app/') Visit Website 
-                                        i.far.fa-long-arrow-right
-
-                        .project
-                            .list-number 
-                                h1 05
-                            img(src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020555/portfolio/images/hexagonal.jpg", alt="Hexagonal")
-                            .project-text
-                                p.project-title Hexagonal
-                                p.project-disc Responsive website with a honeycomb pattern with cool CSS which will make you feel Trippy!! 
-
-                                .btn
-                                    button.visit(data-ref='https://hexgonal.netlify.app/') Visit Website 
-                                        i.far.fa-long-arrow-right
+                        each data,i in projects
+                            .project
+                                .list-number 
+                                    h1=`${(i+1<10)? "0"+(i+1): i+1}`
+                                img(src= "https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020555/portfolio/images/" + data.img, alt=data.title)
+                                .project-text
+                                    p.project-title=data.title
+                                    p.project-disc=data.desc
+                                    .btn
+                                        button.visit(data-ref=data.link) Visit Website 
+                                            i.far.fa-long-arrow-right
 
             #skills(data-color="1")
                 .container
                     h1.header Skills
                     .content
-                        .card
-                            h1.card-header HTML
-                            .card-content
-                                div
-                                    img.skill-img(alt="" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/html5.png")
-                                    p.skill-name HTML5
-
-                                div
-                                    img.skill-img(alt="" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/pug.png")
-                                    p.skill-name PUG
-
-                                div
-                                    img.skill-img(alt="" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/react.png")
-                                    p.skill-name JSX
-
-                        .card
-                            h1.card-header CSS
-                            .card-content
-                                div
-                                    img.skill-img(alt="" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/css3.png")
-                                    p.skill-name CSS3
-
-                                div
-                                    img.skill-img(alt="" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/sass.png")
-                                    p.skill-name SASS
-
-                                div
-                                    img.skill-img(alt="" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/bootstrap.png")
-                                    p.skill-name Bootstrap
-
-                                div
-                                    img.skill-img(alt="" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/materialize.png")
-                                    p.skill-name Materialize
-
-                        .card
-                            h1.card-header Javascript
-                            .card-content
-                                div
-                                    img.skill-img(alt="JavaScript" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/javascript.png")
-                                    p.skill-name JavaScript
-
-                                div
-                                    img.skill-img(alt="TypeScript" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/typescript.png")
-                                    p.skill-name TypeScript
-
-                                div
-                                    img.skill-img(alt="jQuery" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/jquery.png")
-                                    p.skill-name jQuery
-
-                                div
-                                    img.skill-img(alt="React" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/react.png")
-                                    p.skill-name React
-
-                                div
-                                    img.skill-img(alt="Redux" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/redux.png")
-                                    p.skill-name Redux
-
-                        .card
-                            h1.card-header Other
-                            .card-content
-                                div
-                                    img.skill-img(alt="C++" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020552/portfolio/icons/c.png")
-                                    p.skill-name C++
-
-                                div
-                                    img.skill-img(alt="Wordpress" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/wordpress.png")
-                                    p.skill-name Wordpress
-
-                                div
-                                    img.skill-img(alt="Git" src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/git.png")
-                                    p.skill-name Git
+                        each elm in skillSet 
+                            .card
+                                h1.card-header=elm.name
+                                .card-content
+                                    each skill in elm.skills 
+                                        div
+                                            img.skill-img(alt=skill.title.toLowerCase() src="https://res.cloudinary.com/dbvthtwhc/image/upload/v1613020554/portfolio/icons/" + skill.img)
+                                            p.skill-name=skill.title
 
         #contact 
             .container
@@ -310,7 +185,6 @@ html(lang="en")
                         li
                             a(href="https://github.com/amankumar6" target="_blank") GitHub
 
-                - let year = new Date();
                 .copywrite © #{year.getFullYear()} 
                     span Aman Kumar 
 
