@@ -127,7 +127,7 @@
                 &::after
                     content: ''
                     position: absolute
-                    @include pos(0, 0, auto, auto)
+                    // @include pos(0, 0, auto, auto)
                     width: 0
                     height: 100%
                     background: $overlay
@@ -136,14 +136,24 @@
 
                 &:nth-child(2n+1)
                     align-self: flex-start
+                    &::after
+                        @include pos(0, 0, auto, auto)
 
                 &:nth-child(2n)
                     align-self: flex-end
 
+                    &::after
+                        @include pos(0, auto, auto, 0)
+
                 &:hover
                     &::after
                         width: 100%
-                        left: 0
+
+                        &:nth-child(2n+1)
+                            left: 0
+
+                        &:nth-child(2n)
+                            right: 0
 
                     .list-number
                         opacity: 1

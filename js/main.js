@@ -1,5 +1,25 @@
 let randomNumber = Math.floor(Math.random() * 4) + 1;
 
+function nav() {
+    if (screen.width <= 875) {
+        $('.nav-links').toggleClass('nav-active');
+
+        // animating item list
+        $('.nav-links li').each(function (index) {
+            this.style.animation ?
+                (this.style.animation = '') :
+                (this.style.animation = `navlinkfade 500ms ease forwards ${index / 10 + 0.2}s`);
+        });
+
+        // animating the hamBurger button
+        $('.hamBurger').toggleClass('toggleCancel');
+
+        // toggling overflow when hamBurger is clicked
+        if (screen.width <= 875)
+            $('body').toggleClass('removeOverflow');
+    }
+}
+
 $(document).ready(function () {
     switch (randomNumber) {
         case 1:
@@ -29,7 +49,7 @@ $(document).ready(function () {
         speed: 100,
     });
     text.start();
-    text.reveal(2000, 1000);
+    text.reveal(2350, 1000);
 
     // navigation bar
     $('.hamBurger').click(nav);
@@ -64,27 +84,18 @@ $(document).ready(function () {
         })
     });
 
-    $('.navBar .logo').click(()=> location.reload(true))
+    $('.navBar .logo').click(() => location.reload(true))
+
+    // making chevron work
+    $(window).scroll(() => (window.scrollY >= $("#about").offset().top) ? $('.goToTop').addClass('goToTop-active') : $('.goToTop').removeClass('goToTop-active'))
+
+    $('.goToTop').click(() =>
+        document.querySelector('#particles-js').scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest"
+        })
+    )
 });
 
 $(window).on('load', () => setTimeout(() => window.scrollTo(0, 0), 0));
-
-function nav() {
-    if (screen.width <= 875) {
-        $('.nav-links').toggleClass('nav-active');
-
-        // animating item list
-        $('.nav-links li').each(function (index) {
-            this.style.animation ?
-                (this.style.animation = '') :
-                (this.style.animation = `navlinkfade 500ms ease forwards ${index / 10 + 0.2}s`);
-        });
-
-        // animating the hamBurger button
-        $('.hamBurger').toggleClass('toggleCancel');
-
-        // toggling overflow when hamBurger is clicked
-        if (screen.width <= 875)
-            $('body').toggleClass('removeOverflow');
-    }
-}

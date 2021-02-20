@@ -60,10 +60,16 @@ html(lang="en")
         - let projects = [{"title": "Top10List", "link": "https://top10list-react.netlify.app/", "img": "top10list.jpg", "desc": "Top10List is a single page application that is made using ReactJs.",}, {"title": "Epic Player", "link": "http://epicplayer.ml/", "img": "epicPlayer.jpg", "desc": "Epic Player is a music player app with an audio visualizer", }, {"title": "Basic-Calculator", "link": "https://basiccal.netlify.app/", "img": "basic-calculator.jpg", "desc": "Basic Calculator that can do Addition, Subtraction, Multiplication, Division, and Percentage.",}, {"title": "Word Counting App", "link": "https://wordcountingapp.netlify.app/", "img": "wordcountingapp.jpg", "desc": "A simple website where you can count the words and characters.", }, {"title": "Hexagonal", "link": "https://hexgonal.netlify.app/", "img": "hexagonal.jpg", "desc": "Responsive website with a honeycomb pattern with cool CSS which will make you feel Trippy!! ", },]
 
         - let html = [{'title':'HTML5','img':'html5.png'},{'title':'PUG','img':'pug.png'},{'title':'JSX','img':'react.png'}]
+
         - let css = [{'title':'CSS3','img':'css3.png'},{'title':'SASS','img':'sass.png'},{'title':'Bootstrap','img':'bootstrap.png'},{'title':'Materialize','img':'materialize.png'}]
+
         - let javascript = [{'title':'JavaScript','img':'javascript.png'},{'title':'TypeScript','img':'typescript.png'},{'title':'jQuery','img':'jQuery.png'},{'title':'React','img':'react.png'},{'title':'Redux','img':'redux.png'}]
+
+        - let back_end = [{'title':'Node','img':'nodejs.png'},{'title':'MongoDB','img':'mongodb.png'}]
+
         - let other = [{'title':'C++','img':'c.png'},{'title':'Wordpress','img':'wordpress.png'},{'title':'Git','img':'git.png'}]
-        - let skillSet = [{'name': 'HTML','skills':html},{'name': 'CSS','skills':css},{'name': 'Javascript','skills':javascript},{'name': 'Other','skills':other}]
+
+        - let skillSet = [{'name': 'HTML','skills':html},{'name': 'CSS','skills':css},{'name': 'Javascript','skills':javascript},{'name':'Back-End','skills':back_end},{'name': 'Other','skills':other}]
 
         noscript You need to enable JavaScript to run this app.
 
@@ -98,7 +104,7 @@ html(lang="en")
                     p.para
                         | Hello, I'm 
                         span.name Aman Kumar 
-                    p.reveal Front-End Developer
+                    p.reveal Full Stack Web Developer
 
                     .github
                         a(href="https://github.com/amankumar6") ⭐ Star Me On GitHub
@@ -108,11 +114,11 @@ html(lang="en")
                 .container
                     h1.header About
                     .content
-                        p My self Aman, a 20-year-old passionate Front-End Developer from India. I am an undergraduate pre-final year student in the Department of Electronics and Communication at the Birla Institute of Technology, Mesra.
+                        p My self Aman, a 20-year-old passionate Full-Stack Web Developer from India. I am an undergraduate pre-final year student in the Department of Electronics and Communication at the Birla Institute of Technology, Mesra.
 
                         p As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.
 
-                        p Currently I am learning Back-End. My short term goal is to get a job in a reputed company as a Full-Stack Web Developer. And, my Long term goal is to become a more responsible and knowledgeable personality and in a respectable position in my company.
+                        p Currently I am enhancing my knowledge in Back-End. My short term goal is to get a job in a reputed company as a Full-Stack Web Developer. And, my Long term goal is to become a more responsible and knowledgeable personality and in a respectable position in my company.
 
                         p When not working or futzing around with code, I study how to escape from College. I'm available for work, 
                             a(href="mailto:amankumar786dpsdh@gmail.com" target="_blank") get in touch.
@@ -187,6 +193,9 @@ html(lang="en")
 
                 .copywrite © #{year.getFullYear()} 
                     span Aman Kumar 
+
+        .goToTop 
+            i.fal.fa-angle-up
 
         //- JavaScript
         script(src="js/particle.js") 
