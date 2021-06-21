@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:ital,wght@0,400;1,300&family=Raleway:wght@600&display=swap");
 @font-face {
   font-family: League Spartan;
-  src: url(../assets/fonts/LeagueSpartan-Bold.otf);
+  src: url(https://res.cloudinary.com/dbvthtwhc/raw/upload/v1624263834/portfolio/font/LeagueSpartan-Bold_ylrz4b.otf);
 }
 
 * {
@@ -143,7 +143,7 @@ body .goToTop-active {
 }
 
 #main div[data-color="0"] .container {
-  padding: 3rem 0 8rem 0;
+  padding: 3rem 0 5rem 0;
 }
 
 #main div[data-color="1"] {
@@ -590,7 +590,7 @@ body .goToTop-active {
 #skills .content .card, #experience .content .card {
   position: relative;
   margin-bottom: 5rem;
-  padding: 2rem 2rem 3rem 2rem;
+  padding: 1.8rem 1.8rem 2rem 1.8rem;
   background-color: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -600,15 +600,10 @@ body .goToTop-active {
   overflow: hidden;
 }
 
-#skills .content .card:last-child, #experience .content .card:last-child {
-  margin-bottom: 10rem;
-}
-
 #skills .content .card .card-header, #experience .content .card .card-header {
   font-family: "Montserrat", sans-serif;
   border-bottom: 1px solid #ddd;
   font-weight: normal;
-  margin-bottom: 10px;
   padding-bottom: 20px;
 }
 
@@ -640,11 +635,11 @@ body .goToTop-active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 2rem 1.5rem 0 1.5rem;
+  margin: 2rem 1.3rem 0 1.3rem;
 }
 
 #skills .content .card .card-content div img, #experience .content .card .card-content div img {
-  max-height: 100px;
+  max-height: 75px;
   padding-bottom: 10px;
 }
 
@@ -774,6 +769,7 @@ body .goToTop-active {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
 #experience .card .card-header .title {
@@ -791,6 +787,7 @@ body .goToTop-active {
 
 #experience .card .card-header .title img {
   margin-right: 1rem;
+  height: 42px;
 }
 
 #experience .card .card-header .title a {
@@ -967,6 +964,7 @@ body .goToTop-active {
   position: relative;
   margin-top: 6rem;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 #projects .container .content .project:first-child {
@@ -980,6 +978,7 @@ body .goToTop-active {
 #projects .container .content .project img {
   max-width: 100%;
   display: block;
+  border-radius: 4px;
 }
 
 #projects .container .content .project .project-text {
@@ -1051,8 +1050,8 @@ body .goToTop-active {
 
 @media screen and (min-width: 1000px) {
   #projects .container .content .project {
-    width: 65%;
-    margin-top: 9rem;
+    width: 60%;
+    margin-top: 5rem;
   }
   #projects .container .content .project .list-number {
     display: block;
@@ -1061,8 +1060,8 @@ body .goToTop-active {
     top: 30px;
     z-index: 3;
     opacity: 0;
-    -webkit-transition: all 200ms ease 400ms;
-    transition: all 200ms ease 400ms;
+    -webkit-transition: all 200ms ease 300ms;
+    transition: all 200ms ease 300ms;
   }
   #projects .container .content .project .list-number h1 {
     font-size: 8rem;
@@ -1074,16 +1073,16 @@ body .goToTop-active {
     -webkit-text-fill-color: transparent;
     background-size: 100% 200%;
     background-position: 100% 0;
-    -webkit-transition: background-position 350ms ease 500ms;
-    transition: background-position 350ms ease 500ms;
+    -webkit-transition: background-position 350ms ease 400ms;
+    transition: background-position 350ms ease 400ms;
   }
   #projects .container .content .project .project-text .project-title {
-    -webkit-transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 300ms;
-    transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 300ms;
+    -webkit-transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 200ms;
+    transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 200ms;
   }
   #projects .container .content .project .project-text .project-disc {
-    -webkit-transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 300ms;
-    transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 300ms;
+    -webkit-transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 200ms;
+    transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 200ms;
   }
   #projects .container .content .project .project-text .btn button.visit {
     -webkit-transition: all 200ms cubic-bezier(0.694, 0.048, 0.335, 1) 300ms;
@@ -1122,8 +1121,8 @@ body .goToTop-active {
     height: 100%;
     background: #1c1d25;
     opacity: 0.6;
-    -webkit-transition: all 450ms cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: all 450ms cubic-bezier(0.694, 0.048, 0.335, 1);
+    -webkit-transition: all 350ms cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: all 350ms cubic-bezier(0.694, 0.048, 0.335, 1);
   }
   #projects .container .content .project:nth-child(2n+1) {
     -ms-flex-item-align: start;
@@ -1216,7 +1215,7 @@ body .goToTop-active {
   -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
           clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
   background: #232741;
-  height: 25rem;
+  height: 23rem;
   padding: 3rem 0;
   display: -webkit-box;
   display: -ms-flexbox;

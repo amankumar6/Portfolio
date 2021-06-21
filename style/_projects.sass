@@ -8,6 +8,7 @@
             position: relative
             margin-top: 6rem
             cursor: pointer
+            border-radius: 4px
 
             &:first-child
                 margin-top: 0 !important
@@ -18,6 +19,7 @@
             img
                 max-width: 100%
                 display: block
+                border-radius: 4px
 
             .project-text
                 position: absolute
@@ -70,8 +72,8 @@
                     transform: translate(25%, -60%)
 
             @media screen and (min-width:1000px)
-                width: 65%
-                margin-top: 9rem
+                width: 60%
+                margin-top: 5rem
                 .list-number
                     display: block
                     font-family: $LeagueSpartan
@@ -79,7 +81,7 @@
                     top: 30px
                     z-index: 3
                     opacity: 0
-                    transition: all 200ms ease 400ms
+                    transition: all 200ms ease 300ms
                     
                     h1
                         font-size: 8rem
@@ -90,14 +92,14 @@
                         -webkit-text-fill-color: transparent
                         background-size: 100% 200%
                         background-position: 100% 0
-                        transition: background-position 350ms ease 500ms
+                        transition: background-position 350ms ease 400ms
 
                 .project-text
                     .project-title
-                        transition: all 200ms cubic-bezier(.694,.048,.335,1) 300ms
+                        transition: all 200ms cubic-bezier(.694,.048,.335,1) 200ms
 
                     .project-disc
-                        transition: all 200ms cubic-bezier(.694,.048,.335,1) 300ms
+                        transition: all 200ms cubic-bezier(.694,.048,.335,1) 200ms
 
                     .btn
                         button.visit
@@ -132,7 +134,7 @@
                     height: 100%
                     background: $overlay
                     opacity: 0.6
-                    transition: all 450ms cubic-bezier(.694,.048,.335,1)
+                    transition: all 350ms cubic-bezier(.694,.048,.335,1)
 
                 &:nth-child(2n+1)
                     align-self: flex-start

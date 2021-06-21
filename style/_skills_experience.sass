@@ -6,21 +6,20 @@
         .card
             position: relative
             margin-bottom: 5rem
-            padding: 2rem 2rem 3rem 2rem
+            padding: 1.8rem 1.8rem 2rem 1.8rem
             background-color: #fff
             border-radius: 5px
             box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
             transition: all ease 400ms
             overflow: hidden
 
-            &:last-child
-                margin-bottom: 10rem
+            // &:last-child
+            //     margin-bottom: 10rem
 
             .card-header
                 font-family: $Montserrat
                 border-bottom: 1px solid #ddd
                 font-weight: normal
-                margin-bottom: 10px
                 padding-bottom: 20px
 
             .card-content
@@ -30,10 +29,10 @@
                 div
                     @include flex(center,center)
                     flex-direction: column
-                    margin: 2rem 1.5rem 0 1.5rem
+                    margin: 2rem 1.3rem 0 1.3rem
 
                     img
-                        max-height: 100px
+                        max-height: 75px
                         padding-bottom: 10px
 
             @media screen and ( max-width: 640px )
@@ -114,6 +113,7 @@
             @include flex(space-between,center)
             flex-wrap: wrap
             font-size: 1.8rem
+            margin-bottom: 10px
 
             .title
                 @include flex(flex-start,center)
@@ -121,6 +121,7 @@
 
                 img
                     margin-right: 1rem
+                    height: 42px
 
                 a
                     color: $blue
