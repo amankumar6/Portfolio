@@ -128,6 +128,12 @@ body .goToTop-active {
   background: #444649;
 }
 
+@media screen and (max-width: 640px) {
+  #main #about .container, #main #experience .container, #main #projects .container, #main #skills .container {
+    width: 90%;
+  }
+}
+
 #main #about .container .content p {
   margin-top: 1rem;
   font-size: 1.1rem;
@@ -644,6 +650,10 @@ body .goToTop-active {
 }
 
 @media screen and (max-width: 640px) {
+  #skills .content .card, #experience .content .card {
+    margin-bottom: 3rem;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+  }
   #skills .content .card:last-child, #experience .content .card:last-child {
     margin-bottom: 0;
   }
@@ -752,7 +762,7 @@ body .goToTop-active {
 }
 
 #experience .card {
-  padding: 2rem !important;
+  padding: 2rem;
   border-radius: 5px;
 }
 
@@ -1185,18 +1195,18 @@ body .goToTop-active {
 
 @media screen and (max-width: 850px) {
   #projects .container {
-    width: 90% !important;
+    width: 95%;
   }
   #projects .container .content .project {
     width: 95% !important;
     margin-top: 4rem;
   }
   #projects .container .content .project .project-text .project-title {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
   #projects .container .content .project .project-text .btn button.visit {
     padding: 0.5rem 1rem !important;
-    font-size: 0.8rem !important;
+    font-size: 0.6rem !important;
   }
 }
 
