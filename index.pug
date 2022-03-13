@@ -1,6 +1,10 @@
 doctype html
 html(lang="en")
     head
+        - let dateString = "2000/08/06"
+        - let birthday = +new Date(dateString);
+        - let age = ~~((Date.now() - birthday) / (31557600000));
+
         meta(charset="UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         meta(property="og:locale" content="en_US")
@@ -8,8 +12,8 @@ html(lang="en")
         meta(property="og:site_name" content="Aman Kumar | Full-Stack Developer")
         meta(property="og:title" content="Aman Kumar | Full-Stack Developer")
         meta(property="og:url" content="amankumar.ml")
-        meta(property="og:description" content="A 21-year-old passionate Full-Stack Developer from India.")
-        meta(property="og:image" content="https://res.cloudinary.com/dbvthtwhc/image/upload/v1646112156/portfolio/Portfolio.png")
+        meta(property="og:description" content=`A ${age}-year-old passionate Full-Stack Developer from India.`)
+        meta(property="og:image" content="https://res.cloudinary.com/dbvthtwhc/image/upload/v1647188213/portfolio/Portofolio.png")
         meta(property="article:publisher" content="amankumar.ml")
         meta(name="twitter:card" content="summary")
         meta(name="twitter:site" content="@amankumar062")
@@ -71,9 +75,6 @@ html(lang="en")
 
         - let skillSet = [{'name': 'Programming Language','skills':programming}, {'name': 'Markup','skills':markup},{'name': 'Styling','skills':styling},{'name': 'Javascript','skills':javascript},{'name':'Database','skills':dataBase},{'name': 'Other','skills':other}]
 
-        - let dateString = "2000/08/06"
-        - let birthday = +new Date(dateString);
-        - let age = ~~((Date.now() - birthday) / (31557600000));
         - let resumeLink = "https://drive.google.com/file/d/1wsPXnbW7Z8yemonXJOcscBXwodkomtt3/view?usp=sharing";
 
         noscript You need to enable JavaScript to run this app.
