@@ -1,3 +1,28 @@
+const dateString = "2000/08/06"
+const birthday = +new Date(dateString);
+const age = ~~((Date.now() - birthday) / (31557600000));
+
+const aboutMe = `
+<p> My self Aman, a ${age}-year-old passionate Full-Stack Web Developer from India. I am an
+undergraduate final year student in the Department of Electronics and Communication at the Birla
+Institute of Technology, Mesra.<br>My technical interest lies in programming (C++,JS),
+Development (Web Applications). Have prior knowledge of Data Structure & Algorithms and
+Full-Stack Development. 1 year of experience as a web developer in technical delivery. A great
+team player and individual contributor with strong work ethics, technical knowledge and
+collaboration skills. Enjoys being challenged and working on projects that requires me to work
+outside my comfort and knowledge set, as well as continuing to learn new languages, design
+patterns and development techniques. <br>Currently I am enhancing my knowledge in DSA. My short
+term goal is to get a job in a reputed company as a Software Developer Engineer. And, my Long
+term goal is to become a more responsible and knowledgeable personality and in a respectable
+position in my company.</p>
+
+<p>When not working or futzing around with code, I study how to escape from College.</p>
+<p>I'm available for work, <a href="mailto:amankumar786dpsdh@gmail.com" target="_blank">get in
+touch.</a>
+<br>
+My <a href="https://drive.google.com/file/d/1wsPXnbW7Z8yemonXJOcscBXwodkomtt3/view?usp=sharing" target="_blank">Resume</a></p>
+`
+
 // Experience
 const experience = [
     {
@@ -6,8 +31,12 @@ const experience = [
         link: "https://www.smartserv.io/",
         img: "https://www.smartserv.io/wp-content/uploads/2022/01/smartserv-logo-with-name.svg",
         disc: "A cloud-based field service management software built for service contractors with smart automation to get things done faster.",
-        details: ["Working..."],
-        time: "Jan 2022 - Present",
+        details: [
+            "Gained hands-on experience in iOS development.",
+            "Created an iOS App for storing location coordinates even if the user is offline.",
+            "Tools Used: Swift, Storyboard, Core Data, Firebase"
+        ],
+        time: "Jan 2022 - July 2022",
     },
     {
         title: "Three Arrow Technologies",

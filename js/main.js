@@ -109,7 +109,23 @@ $(document).ready(function () {
             inline: "nearest",
         })
     );
+
+    updateDOB();
 });
+
+function updateDOB(){
+    const dateString = "2000/08/06"
+    const birthday = +new Date(dateString);
+    const age = ~~((Date.now() - birthday) / (31557600000));
+    
+    $('meta[name="description"]').attr('content', `A ${age}-year-old passionate Full-Stack Developer from India`);
+
+    $('meta[property="og:description"]').attr('content', `A ${age}-year-old passionate Full-Stack Developer from India`);
+
+    $('meta[name="twitter:description"]').attr('content', `A ${age}-year-old passionate Full-Stack Developer from India`);
+
+    document.querySelector("#about .content").innerHTML = aboutMe
+}
 
 function experienceLists() {
     let content = document.querySelector("#experience .content");
