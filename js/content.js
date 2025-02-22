@@ -1,40 +1,73 @@
-const dateString = "2000/08/06"
+const dateString = "2000/08/06";
 const birthday = +new Date(dateString);
-const age = ~~((Date.now() - birthday) / (31557600000));
+const currentAge = ~~((Date.now() - birthday) / 31557600000);
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateMetaTags(currentAge);
+});
+
+function updateMetaTags(age) {
+    const metaTags = ["og:description", "twitter:description", "description"];
+
+    metaTags.forEach((tagName) => {
+        const metaTag =
+            document.querySelector(`meta[name="${tagName}"]`) ||
+            document.querySelector(`meta[property="${tagName}"]`);
+        if (metaTag) {
+            metaTag.setAttribute(
+                "content",
+                `A ${age}-year-old passionate Full-Stack Developer from India.`
+            );
+        } else {
+            console.error(`Meta tag '${tagName}' not found.`);
+        }
+    });
+}
 
 const aboutMe = `
-<p> My self Aman, a ${age}-year-old passionate Full-Stack Web Developer from India. I am an
-undergraduate final year student in the Department of Electronics and Communication at the Birla
-Institute of Technology, Mesra.<br>My technical interest lies in programming (C++,JS),
-Development (Web Applications). Have prior knowledge of Data Structure & Algorithms and
-Full-Stack Development. 1 year of experience as a web developer in technical delivery. A great
-team player and individual contributor with strong work ethics, technical knowledge and
-collaboration skills. Enjoys being challenged and working on projects that requires me to work
-outside my comfort and knowledge set, as well as continuing to learn new languages, design
-patterns and development techniques. <br>Currently I am enhancing my knowledge in DSA. My short
-term goal is to get a job in a reputed company as a Software Developer Engineer. And, my Long
-term goal is to become a more responsible and knowledgeable personality and in a respectable
-position in my company.</p>
+<p> I'm Aman, a ${currentAge}-year-old Full-Stack Web Developer from India, with a robust background in building dynamic and efficient web applications. My foundation in Electronics and Communication at Birla Institute of Technology, Mesra instilled in me a strong analytical mindset and a passion for programming in C++ and JavaScript. My technical interests lie in crafting seamless user experiences and designing scalable backend systems. I have a solid understanding of Data Structures and Algorithms, coupled with practical experience in full-stack development. Over the past year, I've worked in technical delivery, honing my skills and contributing to impactful projects. My expertise spans across a wide range of technologies, including React, Node.js, Express.js, MongoDB, and cloud platforms like Azure and AWS. I've successfully architected and developed complex applications, such as an AI-powered algorithm visualizer and a full-stack financial management platform, demonstrating my ability to deliver high-quality solutions. I am a dedicated team player and individual contributor, known for my strong work ethics and collaborative spirit. Currently, I'm focused on deepening my knowledge of DSA to further enhance my problem-solving abilities. My immediate goal is to secure a challenging Software Development Engineer position in a leading company, where I can apply my skills and contribute to innovative projects. My long-term vision is to become a respected leader in the tech industry, continuously pushing the boundaries of technology.
+</p>
 
-<p>When not working or futzing around with code, I study how to escape from College.</p>
 <p>I'm available for work, <a href="mailto:amankumar786dpsdh@gmail.com" target="_blank">get in
 touch.</a>
 <br>
-My <a href="https://drive.google.com/file/d/1wsPXnbW7Z8yemonXJOcscBXwodkomtt3/view?usp=sharing" target="_blank">Resume</a></p>
-`
+My <a href="https://drive.google.com/file/d/18qS7gN3_qG8K6Cf1mMrp0JiHhiKMTP8W/view?usp=drive_link" target="_blank">Resume</a></p>
+`;
+
+// My self Aman, a ${age}-year-old passionate Full-Stack Web Developer from India. I am an undergraduate final year student in the Department of Electronics and Communication at the Birla Institute of Technology, Mesra.<br>My technical interest lies in programming (C++,JS), Development (Web Applications). Have prior knowledge of Data Structure & Algorithms and Full-Stack Development. 1 year of experience as a web developer in technical delivery. A great team player and individual contributor with strong work ethics, technical knowledge and collaboration skills. Enjoys being challenged and working on projects that requires me to work outside my comfort and knowledge set, as well as continuing to learn new languages, design patterns and development techniques. <br>Currently I am enhancing my knowledge in DSA. My short term goal is to get a job in a reputed company as a Software Developer Engineer. And, my Long term goal is to become a more responsible and knowledgeable personality and in a respectable position in my company. When not working or futzing around with code, I study how to escape from College.
 
 // Experience
 const experience = [
     {
-        title: "",
-        profile: "Techinical Intern",
+        title: "Deloitte USI",
+        profile: "DC Analyst",
+        link: "https://www2.deloitte.com/us/en.html",
+        img: "https://www2.deloitte.com/content/dam/assets/logos/deloitte-us-logo.svg",
+        disc: "Deloitte provides audit, consulting, tax, and advisory services to many of the world's most admired brands.",
+        details: [
+            "Developed and optimized PL/SQL packages and BIP reports in Oracle Cloud, improving data processing efficiency by 25% for enterprise clients.",
+            "Automated key business processes using UFT and VBScript, reducing manual efforts by 40%.",
+            "Designed and integrated REST APIs to streamline communication between Oracle Cloud and external systems, improving data synchronization.",
+            "Implemented monitoring and logging solutions within Oracle Integration Cloud (OIC), enhancing real-time transaction visibility and reducing troubleshooting time by more than one hour per incident.",
+            "Developed scripts for data migration and transformation, ensuring seamless transition from on-premise systems to cloud-based infrastructure.",
+            "Improved BI reporting accuracy through advanced SQL-based analytics, reducing report errors by 15%.",
+            "Tools Used: Oracle Cloud, PL/SQL, UFT, VBScript, REST APIs, Oracle Integration Cloud (OIC), SQL",
+        ],
+        time: "Sept 2022 - Present",
+        location: "Hyderabad, Telangana, India",
+    },
+    {
+        title: "SmartServ",
+        profile: "Software Engineer Intern",
         link: "https://www.smartserv.io/",
         img: "https://www.smartserv.io/wp-content/uploads/2022/01/smartserv-logo-with-name.svg",
         disc: "A cloud-based field service management software built for service contractors with smart automation to get things done faster.",
         details: [
-            "Gained hands-on experience in iOS development.",
-            "Created an iOS App for storing location coordinates even if the user is offline.",
-            "Tools Used: Swift, Storyboard, Core Data, Firebase"
+            "Engineered an offline location tracking module in the SmartServ iOS app using Objective-C, SQLite, and CoreData, enhancing real-time reporting accuracy by 90% for field service technicians.",
+            "Boosted customer engagement by 30% by developing an automated APNS-powered automated follow-up reminder system for field agents.",
+            "Enhanced app usability by integrating dark mode with Alamofire-based API calls and revamping UI/UX, increasing user engagement by 20%.",
+            "Developed and maintained REST APIs for seamless data communication between mobile apps and cloud servers, ensuring efficient synchronization with Firebase and SQLite.",
+            "Tools Used: Objective-C, SQLite, CoreData, APNS, Alamofire, Firebase, REST APIs",
         ],
         time: "Jan 2022 - July 2022",
     },
@@ -83,23 +116,35 @@ const experience = [
 // Project
 const projects = [
     {
-        title: "Track Your Goals",
-        link: "https://app---todo.herokuapp.com/",
-        img: "TrackYourGoals.png",
-        desc: "Web app helps you to keep track of your daily goals.",
+        title: "AI-Powered Algorithm Visualizer",
+        link: "https://ai-algo-visualizer.netlify.app/",
+        img: "1.jpg",
+        desc: "Interactive algorithm visualization tool built with React and TypeScript. Features real-time sorting animations, pathfinding demos, and a Sudoku solver with AI-powered insights. Perfect for learning algorithms through visual exploration! 🎯✨.",
+    },
+    {
+        title: "Expense Tracker",
+        link: "https://cashcrafter.netlify.app/",
+        img: "2.jpg",
+        desc: "A modern expense tracking application built with MERN stack. Features real-time analytics, receipt management, and a responsive UI for easy financial management.",
+    },
+    {
+        title: "Metro Pathfinding Application",
+        link: "https://github.com/amankumar6/Metro-Pathfinding-Application",
+        img: "3.jpg",
+        desc: "This Java application provides a route planning tool for the Hyderabad Metro, allowing users to find the shortest paths (based on distance or travel time) between stations. It utilizes Dijkstra's algorithm to efficiently calculate optimal routes and considers interchanges between different metro lines.",
     },
     {
         title: "Covid-19 Report",
-        link: "https://covid19-status.ml/",
+        link: "https://report-covid19.netlify.app/",
         img: "report-covid19.jpg",
         desc: "It shows the Status of COVID-19 from all over the world.",
     },
     {
         title: "Top10List",
-        link: "https://top10list.ml/",
+        link: "https://top10list-react.netlify.app/",
         img: "top10list.jpg",
         desc: "Top10List is a single page application that is made using ReactJs.",
-    },
+      },
     {
         title: "Epic Player",
         link: "http://epicplayer.cf/",
@@ -108,7 +153,7 @@ const projects = [
     },
     {
         title: "Missionaries and Cannibals",
-        link: "http://boatgame.ml/",
+        link: "https://boat-game.netlify.app/",
         img: "missionaries-and-cannibals.jpg",
         desc: "It is a simple game made with javascript. Three missionaries and three cannibals need to be crossed a river using a boat.",
     },
