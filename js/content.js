@@ -1,6 +1,7 @@
 const dateString = "2000/08/06";
 const birthday = +new Date(dateString);
 const currentAge = ~~((Date.now() - birthday) / 31557600000);
+const resumeLink = "https://drive.google.com/file/d/1rMnUHJKYQZFl9iBjLLobKjqb-tQzstdx/view";
 
 document.addEventListener("DOMContentLoaded", function () {
     updateMetaTags(currentAge);
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function updateMetaTags(age) {
     const metaTags = ["og:description", "twitter:description", "description"];
 
-    metaTags.forEach((tagName) => {
+    metaTags.forEach((tagName) => {``
         const metaTag =
             document.querySelector(`meta[name="${tagName}"]`) ||
             document.querySelector(`meta[property="${tagName}"]`);
@@ -31,7 +32,7 @@ const aboutMe = `
 <p>I'm available for work, <a href="mailto:amankumar786dpsdh@gmail.com" target="_blank">get in
 touch.</a>
 <br>
-My <a href="https://drive.google.com/file/d/1rSxA4XbSb1kzhGAGGqaLs3QQKbMrmXms/view?usp=sharing" target="_blank">Resume</a></p>
+My <a href="${resumeLink}" target="_blank">Resume</a></p>
 `;
 
 // My self Aman, a ${age}-year-old passionate Full-Stack Web Developer from India. I am an undergraduate final year student in the Department of Electronics and Communication at the Birla Institute of Technology, Mesra.<br>My technical interest lies in programming (C++,JS), Development (Web Applications). Have prior knowledge of Data Structure & Algorithms and Full-Stack Development. 1 year of experience as a web developer in technical delivery. A great team player and individual contributor with strong work ethics, technical knowledge and collaboration skills. Enjoys being challenged and working on projects that requires me to work outside my comfort and knowledge set, as well as continuing to learn new languages, design patterns and development techniques. <br>Currently I am enhancing my knowledge in DSA. My short term goal is to get a job in a reputed company as a Software Developer Engineer. And, my Long term goal is to become a more responsible and knowledgeable personality and in a respectable position in my company. When not working or futzing around with code, I study how to escape from College.
